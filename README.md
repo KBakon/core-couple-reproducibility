@@ -1,4 +1,4 @@
-# CORE-COUPLE IJPE reproducibility artifacts
+# CORE-COUPLE reproducibility artifacts
 
 This repository contains the computational verification artifacts supporting the manuscript:
 
