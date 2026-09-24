@@ -1,0 +1,2 @@
+# Sole non-standard dependency used by the frozen exact verifier.
+sympy==1.14.0

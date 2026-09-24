@@ -1,0 +1,18 @@
+{
+  "larger_cleanroom_grid": {
+    "A_cases": 8505,
+    "A_failures": [],
+    "B_cases": 27630,
+    "B_failures": [],
+    "S_cases": 15255,
+    "S_failures": []
+  },
+  "sensitivity_identity": {
+    "cases": 100,
+    "failures": []
+  },
+  "boundary_equalities": {
+    "cases": 1404,
+    "failures": []
+  }
+}
