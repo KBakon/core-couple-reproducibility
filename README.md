@@ -1,87 +1,61 @@
-# CORE-COUPLE reproducibility artifacts
+# CORE-COUPLE reproducibility release
 
-This repository contains the computational verification artifacts supporting the manuscript:
+Supporting **When Is Pooled Return-Quality Information Sufficient for Remanufacturing Capacity Choice?** Version 2.0.0.
 
-**Decision Validity of Stable Return Composition in Remanufacturing Capacity Expansion: Capacity-Regime Boundaries under Volume-Conditioned Core Quality**
+This package reproduces exact computational checks for matched pooled-information exchanges, finite capacity-menu comparisons and ordered recovery residual-capacity mechanisms. Analytical proofs are in the manuscript and supplement. The computations provide falsification and implementation assurance; they do not establish empirical prevalence or industrial validation.
 
-The package is intentionally small. It is not the manuscript source tree or the full research-development archive. It contains only the frozen computational artifacts and the documentation needed to inspect and rerun the main exact verifier.
+## Quick start
+
+Extract the complete archive. From its root, with Python 3.10 or newer:
+
+```sh
+python -B verify_release.py
+```
+
+A fast integrity-only check is available separately:
+
+```sh
+python -B verify_release.py --checksums-only
+```
+
+No third-party packages or internet connection are required. The default command first checks every manifest file and required snapshot member, then runs both scientific verifiers from a fresh temporary working directory and compares every parsed output field to the immutable archived expectations. Temporary generated outputs are removed after comparison. The release tree is not changed. A writable system temporary directory is required; `--work-dir` can select another existing writable scratch directory. An optional `--report` path must be outside the release directory and have an existing parent.
+
+For individual generation (an existing output directory is required):
+
+```sh
+python -B gen1/CORE_COUPLE_GEN1_exact_falsifier_v1.py --output ../results_gen1.json
+python -B gen2/CORE_COUPLE_GEN2_exact_falsifier_v1.py --output ../results_gen2.json
+```
+
+Individual commands create files and therefore change the release inventory. Save outputs outside the extracted release tree when retaining checksum verification. Use the top-level command for an automatically isolated run.
 
 ## Contents
 
-- `CORE_COUPLE_MDE3_exact_theorem_falsifier.py` — frozen exact finite-grid verifier.
-- `CORE_COUPLE_MDE3_exact_audit_results.json` — frozen byte-level reference output of the exact verifier.
-- `CORE_COUPLE_cleanroom_checker_results.json` — frozen output of the independent clean-room verification.
-- `CORE_COUPLE_Reproducibility_Manifest_v1.md` — frozen project manifest containing the recorded hashes, environment, verification counts, and locked diagnostic values.
-- `REPRODUCIBILITY_MANIFEST.md` — public-facing inventory and integrity record.
-- `CLEANROOM_VERIFIER_STATUS.md` — scope note for the archived clean-room output.
-- `requirements.txt` — Python dependency specification for the exact verifier.
-- `CITATION.cff` — citation metadata. No DOI is embedded by design.
-- `SHA256SUMS.txt` — checksums for the deposited files.
-- `PUBLIC_RELEASE_CHECKLIST.md` — the two repository-release actions that remain outside the scientific package.
+- gen1/: exact exchange/recourse/finite-menu verifier and unchanged expected output.
+- gen2/: exact residual-capacity verifier and unchanged expected output.
+- input_snapshot/: immutable two-member regression ZIP, subset checksums and original-container provenance receipt.
+- portability/: focused path/input-plumbing diffs and their explanation.
+- metadata/: software-deposit metadata; no repository identifier assigned.
+- CITATION.cff, licenses, manifest and checksums: citation, rights and integrity information.
 
-## Scientific interpretation
+## Interpreting verification
 
-The computations provide exact finite-grid falsification and implementation assurance for the analytical results stated in the manuscript. They are not empirical observations, statistical samples, prevalence estimates, or a substitute for the analytical proofs.
+PASS means the bounded tests execute successfully and the complete generated scientific JSON is semantically identical to the archived result. JSON_SEMANTIC_EQUIVALENCE and BYTE_EQUALITY are separate: line endings, whitespace or serialization can differ across systems even when every parsed field agrees. Any parsed field mismatch is a failure; no numerical field is excluded. Checksums alone do not execute science and are labeled as such.
 
-## Frozen execution environment
+The verifiers perform complete declared small domains, including intentional counterexamples to rejected sign/converse rules. Their nonempty counterexample lists are scientific evidence, not failed verification. Exact integers, Fraction and finite polynomials are used; there is no Monte Carlo. The complete release test took 67.034 seconds for GEN1 and 35.720 seconds for GEN2 on the tested Windows/Python environment. These measured times are hardware/runtime dependent, not performance guarantees; allow several minutes on other systems. The external verification report records the test environment and timings.
 
-The project manifest records:
+## Reproducibility boundaries
 
-- Python 3.13.5
-- SymPy 1.14.0
-- Linux x86_64
-- glibc 2.41
+All computational functions are unchanged from the source verifiers. Portability changes are limited to CLI/path resolution, input-container bookkeeping and output placement. The regression input snapshot omits unused legacy manuscript/housekeeping contents from the original full archive. The original input_integrity field is retained as archived historical provenance; fresh runs verify the current subset separately. See REPRODUCIBILITY_MANIFEST.md and portability/PATCHES.md for details.
 
-The main verifier was re-executed during public-package preparation with Python 3.13.5 and SymPy 1.14.0. The regenerated JSON was byte-identical to the archived frozen output, with SHA-256:
+The historical standalone cleanroom verifier source is unavailable. Its archived JSON is a reference, and its checks are not advertised as independently rerun here. The analytical assumptions are finite regimes/menus, conditional multinomial composition for the exchange, and ordered positive values/integer loads for the residual mechanism. Finite checks do not extend theorem domains. The equal-load finite-menu decision construction and strict cross-load local examples retain their distinct roles.
 
-`f841c6a6260573ea2f9ff27d8a907d2467e71ac1b6f7aca0878cf5e0f4120ba4`
+## Citation and license
 
-## Re-running the exact verifier
+Use CITATION.cff and cite the repository record once published: **DOI assigned upon repository publication**. No DOI, repository URL, publication date or journal identifier is claimed for this release.
 
-The frozen script writes its output to the fixed path:
+Python code is MIT licensed. Documentation, metadata and archived outputs are CC BY 4.0; preserve attribution and indicate changes. See LICENSE.md, LICENSE-CODE.txt and LICENSE-CONTENT.md. Author and ORCID are drawn from existing project citation metadata. No author email is included.
 
-`/mnt/data/CORE_COUPLE_MDE3_exact_audit_results.json`
+## Version history
 
-Run a copy in a separate writable environment so that the archived frozen output is not overwritten. One reproducible Docker workflow is:
-
-```bash
-mkdir -p run-output
-docker run --rm \
-  -v "$PWD":/src:ro \
-  -v "$PWD/run-output":/mnt/data \
-  -w /mnt/data python:3.13-slim \
-  sh -lc "python -m pip install --no-cache-dir sympy==1.14.0 && cp /src/CORE_COUPLE_MDE3_exact_theorem_falsifier.py . && python CORE_COUPLE_MDE3_exact_theorem_falsifier.py"
-sha256sum run-output/CORE_COUPLE_MDE3_exact_audit_results.json
-```
-
-The expected digest is:
-
-`f841c6a6260573ea2f9ff27d8a907d2467e71ac1b6f7aca0878cf5e0f4120ba4`
-
-## Clean-room verification
-
-The independent clean-room output is preserved and hash-verified. Its standalone verifier source was not part of the frozen releasable artifact set available for this deposit. The package therefore does not claim that the clean-room check can be rerun from these files. See `CLEANROOM_VERIFIER_STATUS.md`.
-
-## Integrity rule
-
-Do not edit the four frozen project artifacts in place:
-
-- `CORE_COUPLE_MDE3_exact_theorem_falsifier.py`
-- `CORE_COUPLE_MDE3_exact_audit_results.json`
-- `CORE_COUPLE_cleanroom_checker_results.json`
-- `CORE_COUPLE_Reproducibility_Manifest_v1.md`
-
-Any changed computational artifact must receive a new versioned filename and a new manifest entry.
-
-## DOI policy
-
-No DOI is written into this package before public release. The first public GitHub release may be archived by Zenodo, which will assign the archival DOI. That DOI can then be cited in the manuscript and repository metadata without creating a DOI/release update loop.
-
-## License
-
-This is a mixed research-software package:
-
-- `CORE_COUPLE_MDE3_exact_theorem_falsifier.py` is licensed under the **MIT License**.
-- Documentation, metadata, manifests, checksum files, and archived JSON outputs are licensed under **Creative Commons Attribution 4.0 International (CC BY 4.0)** unless otherwise stated.
-
-See `LICENSE.md`, `LICENSE-CODE.txt`, and `LICENSE-CONTENT.md` for scope and terms.
+The current package is v2.0.0 and supports the manuscript named above with GEN1+GEN2 exact verification. The v1.0.0 tag and release remain unchanged for the earlier MDE3-era manuscript state. Historical files are retrievable from that tag; the current root contains the current evidence package. Repository metadata carry no DOI for v2.0.0 before archival publication.

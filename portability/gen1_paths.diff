@@ -1,0 +1,49 @@
+--- development_gen1/CORE_COUPLE_GEN1_exact_falsifier_v1.py
++++ gen1/CORE_COUPLE_GEN1_exact_falsifier_v1.py
+@@ -1,10 +1,6 @@
+-"""CORE-COUPLE GEN1: exact finite checks, not proofs.
+-
+-Python >=3.10; standard library only. No random numbers, floating point,
+-external packages, or writes to scientific inputs. From any working directory:
+-  python /path/to/CORE_COUPLE_GEN1_exact_falsifier_v1.py --archive INPUT.zip
+-Default output is the versioned JSON beside this script. --output must remain
+-inside development_gen1. The archive is read directly and never extracted.
++"""Exact exchange verification. Portable release copy; see portability/PATCHES.md.
++The regression snapshot is a subset; input_integrity retains archived provenance.
++Use --output to select an output file (its parent must exist).
+ """
+ from __future__ import annotations
+ 
+@@ -549,15 +545,15 @@
+ 
+ def main():
+     parser=argparse.ArgumentParser(description=__doc__)
+-    parser.add_argument('--archive',type=Path,default=Path(r'<private input archive default removed>'))
+-    parser.add_argument('--output',type=Path,default=Path(__file__).with_name('CORE_COUPLE_GEN1_exact_results_v1.json'))
++    parser.add_argument('--archive',type=Path,default=Path(__file__).resolve().parents[1]/'input_snapshot/required_frozen_inputs_v1.zip')
++    parser.add_argument('--output',type=Path,default=Path(__file__).with_name('generated_results_v1.json'))
+     args=parser.parse_args()
+     root=Path(__file__).resolve().parent
+-    require(root.name=='development_gen1','output root')
+-    require(args.output.resolve().is_relative_to(root),'output outside development_gen1')
++    require(root.name=='gen1','output root')
++    require(args.output.parent.is_dir(),'output parent must exist')
+     with zipfile.ZipFile(args.archive) as z:
+         before={n:sha256(z.read(n)).hexdigest() for n in z.namelist() if not n.endswith('/')}
+-        baseline=root/'CORE_COUPLE_GEN1_input_hashes_before_v1.json'
++        baseline=root.parent/'input_snapshot/subset_checksums_v1.json'
+         if baseline.exists():
+             require(before==json.loads(baseline.read_text())['members'],'prework member hashes')
+         result={'schema':'CORE_COUPLE_GEN1_exact_results_v1','arithmetic':'Python integer/Fraction sparse polynomials; no float or Monte Carlo',
+@@ -568,8 +564,9 @@
+     require(before==after,'input member mutation')
+     archive_hash=sha256(args.archive.read_bytes()).hexdigest()
+     if baseline.exists():require(archive_hash==json.loads(baseline.read_text())['archive_sha256'],'archive hash mutation')
+-    result['input_integrity']={'archive_sha256':archive_hash,'member_sha256':after,
+-                               'all_input_members_unchanged':True,'frozen_members_unchanged':True,'manuscript_members_unchanged':True}
++    # Retain the archived full-source-container receipt as provenance only.
++    # Actual subset bytes are checked above and by verify_release.py.
++    result['input_integrity']=json.loads((root.parent/'input_snapshot/source_input_receipt_v1.json').read_text())
+     result['untested']=['non-multinomial conditional laws','continuous grades/volumes/capacities',
+         'composition-dependent loads, recovery values, or fixed costs','correlated item grades within a regime',
+         'global structural converse restricted to common-primitives distinct-volume S=2 recourse on a single fiber',

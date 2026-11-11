@@ -1,2 +1,1 @@
-# Sole non-standard dependency used by the frozen exact verifier.
-sympy==1.14.0
+# Python >=3.10. Standard library only; no pip packages required.

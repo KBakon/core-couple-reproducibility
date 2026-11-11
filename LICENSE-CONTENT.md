@@ -1,17 +1,8 @@
-# Creative Commons Attribution 4.0 International (CC BY 4.0)
+# Creative Commons Attribution 4.0 International
 
-Except for the Python source code covered by `LICENSE-CODE.txt`, and except where otherwise stated, the documentation, metadata, manifests, checksum files, and archived JSON outputs in this repository are licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+The documentation, citation/metadata, manifests and archived JSON outputs in this release are licensed under CC BY 4.0. Python source is separately MIT licensed. Preserve credit, link to the license, and indicate changes.
 
-You may share and adapt this material, including for commercial purposes, provided that you give appropriate credit, provide a link to the license, and indicate if changes were made.
+License: https://creativecommons.org/licenses/by/4.0/
+Legal code: https://creativecommons.org/licenses/by/4.0/legalcode
 
-Canonical license URL:
-
-https://creativecommons.org/licenses/by/4.0/
-
-Legal code:
-
-https://creativecommons.org/licenses/by/4.0/legalcode
-
-Suggested attribution:
-
-Krisztián Attila Bakon (2026), *Reproducibility artifacts for Decision Validity of Stable Return Composition in Remanufacturing Capacity Expansion: Capacity-Regime Boundaries under Volume-Conditioned Core Quality*, version 1.0.0. Cite the archived repository record/DOI once assigned.
+Attribution: Krisztián Attila Bakon, Reproducibility package for When Is Pooled Return-Quality Information Sufficient for Remanufacturing Capacity Choice?, version 2.0.0. Use the repository identifier once assigned.

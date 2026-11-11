@@ -1,0 +1,7 @@
+{
+  "archive_sha256": "7bd14bd3f7a2ce24a76e490853dc9cccdd31081cd2a9567282ddc269b32dbbca",
+  "members": {
+    "frozen_reproducibility/CORE_COUPLE_MDE3_exact_audit_results.json": "f841c6a6260573ea2f9ff27d8a907d2467e71ac1b6f7aca0878cf5e0f4120ba4",
+    "frozen_reproducibility/CORE_COUPLE_cleanroom_checker_results.json": "fca1ff6ed5057df26ac98e7752225a8f5a233f73ae9b676928a116b1982ddae8"
+  }
+}
