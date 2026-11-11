@@ -1,0 +1,875 @@
+{
+  "M3_decisions": {
+    "a": [
+      1,
+      1,
+      2
+    ],
+    "capacities": [
+      1,
+      2,
+      3
+    ],
+    "costs": [
+      "0",
+      "17/10",
+      "13/5"
+    ],
+    "failures": [],
+    "matched_exchange": "state1 grade1<-grade2; weighted opposite in state3; state2 fixed",
+    "n": [
+      2,
+      3,
+      4
+    ],
+    "pairwise_optimality_checks": 9,
+    "points": [
+      {
+        "argmax": [
+          3
+        ],
+        "eta": "-1/3",
+        "net_values": [
+          "9487/3888",
+          "24221/9720",
+          "49691/19440"
+        ],
+        "operating_values": [
+          "9487/3888",
+          "8149/1944",
+          "20047/3888"
+        ],
+        "p": [
+          [
+            "0",
+            "2/3",
+            "1/3"
+          ],
+          [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          [
+            "1/2",
+            "1/6",
+            "1/3"
+          ]
+        ],
+        "pairwise_net": {
+          "1->2": "1007/19440",
+          "1->3": "47/405",
+          "2->3": "1249/19440"
+        }
+      },
+      {
+        "argmax": [
+          1
+        ],
+        "eta": "0",
+        "net_values": [
+          "209/81",
+          "6259/2430",
+          "1042/405"
+        ],
+        "operating_values": [
+          "209/81",
+          "1039/243",
+          "419/81"
+        ],
+        "p": [
+          [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          [
+            "1/3",
+            "1/3",
+            "1/3"
+          ]
+        ],
+        "pairwise_net": {
+          "1->2": "-11/2430",
+          "1->3": "-1/135",
+          "2->3": "-7/2430"
+        }
+      },
+      {
+        "argmax": [
+          2
+        ],
+        "eta": "1/3",
+        "net_values": [
+          "3365/1296",
+          "25381/9720",
+          "16697/6480"
+        ],
+        "operating_values": [
+          "3365/1296",
+          "8381/1944",
+          "6709/1296"
+        ],
+        "p": [
+          [
+            "2/3",
+            "0",
+            "1/3"
+          ],
+          [
+            "1/3",
+            "1/3",
+            "1/3"
+          ],
+          [
+            "1/6",
+            "1/2",
+            "1/3"
+          ]
+        ],
+        "pairwise_net": {
+          "1->2": "287/19440",
+          "1->3": "-8/405",
+          "2->3": "-671/19440"
+        }
+      }
+    ],
+    "q": [
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "uniform_sign_robust_example": {
+      "costs": [
+        "0",
+        "10",
+        "20"
+      ],
+      "exact_certificate": "0<=R_C<=9 for all compositions; alternative1 J>=0; alternative2 J<=-1; alternative3 J<=-11",
+      "unique_choice": 1
+    },
+    "v": [
+      3,
+      2,
+      1
+    ]
+  },
+  "arithmetic": "Python integer/Fraction sparse polynomials; no float or Monte Carlo",
+  "classification": "A",
+  "exchange_identity": {
+    "M3_cocycle_cases": 3672,
+    "cases_by_SK": {
+      "S=2,K=2": 432,
+      "S=2,K=3": 3240,
+      "S=3,K=2": 864,
+      "S=3,K=3": 6480
+    },
+    "failures": [],
+    "ranges": {
+      "K": [
+        2,
+        3
+      ],
+      "S": [
+        2,
+        3
+      ],
+      "capacities": [
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          1,
+          3,
+          5
+        ],
+        [
+          2,
+          4,
+          6
+        ]
+      ],
+      "checks": "all state pairs, grade pairs, capacity pairs; equality of full exact directional polynomials",
+      "families": {
+        "2": [
+          [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          [
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              1
+            ]
+          ]
+        ],
+        "3": [
+          [
+            [
+              1,
+              1,
+              2
+            ],
+            [
+              3,
+              2,
+              1
+            ]
+          ],
+          [
+            [
+              1,
+              2,
+              2
+            ],
+            [
+              3,
+              2,
+              1
+            ]
+          ],
+          [
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              3,
+              2,
+              1
+            ]
+          ],
+          [
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              4,
+              3,
+              1
+            ]
+          ],
+          [
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              1,
+              4,
+              2
+            ]
+          ]
+        ]
+      },
+      "probabilities": "uniform q and q_i=(i+1)/sum(i+1); uniform p and cyclic (1..K)/sum(1..K)",
+      "volumes": "all increasing S-tuples from 1..4"
+    },
+    "total_pair_identity_cases": 11016
+  },
+  "input_integrity": {
+    "all_input_members_unchanged": true,
+    "archive_sha256": "d6484bdc1a31f261c8cddf6161f0076665f9565dc7e8efa353d9a44574affa71",
+    "frozen_members_unchanged": true,
+    "manuscript_members_unchanged": true,
+    "member_sha256": {
+      "frozen_reproducibility/CITATION.cff": "8f713446e49c5eb6231794bdb28eae77787b5619475866b726387193310b6f9c",
+      "frozen_reproducibility/CLEANROOM_VERIFIER_STATUS.md": "a093172efb2a4a014c1d8feedb847ec55198ab7a4e34209be5c9e04a25192196",
+      "frozen_reproducibility/CORE_COUPLE_MDE3_exact_audit_results.json": "f841c6a6260573ea2f9ff27d8a907d2467e71ac1b6f7aca0878cf5e0f4120ba4",
+      "frozen_reproducibility/CORE_COUPLE_MDE3_exact_theorem_falsifier.py": "2f13de6019df53335b620cf9d94d0fb9d8cded533b0ebd57664c4b24692521b8",
+      "frozen_reproducibility/CORE_COUPLE_Reproducibility_Manifest_v1.md": "2879fd2de6125d894198d34d035802c1ff11fb0ae0532eb6ae46351b06263c3c",
+      "frozen_reproducibility/CORE_COUPLE_cleanroom_checker_results.json": "fca1ff6ed5057df26ac98e7752225a8f5a233f73ae9b676928a116b1982ddae8",
+      "frozen_reproducibility/LICENSE-CODE.txt": "8c2011baf2f4e7cd63dff7385346d95d2a7aabc1cbe8888f5793e4cc6103bfc4",
+      "frozen_reproducibility/LICENSE-CONTENT.md": "1882ef8ee3246ad15c349b18f634c81abb108a88be6c52cb8d6748f29a68adae",
+      "frozen_reproducibility/LICENSE.md": "0a09c88e568919e81d1627dc10963c0f2ea1bca58d0932c28af7346dd5fd3bbe",
+      "frozen_reproducibility/PUBLIC_RELEASE_CHECKLIST.md": "f486fde439121efd698f421b346688d783a3c943052082feccc12cd2217c3d29",
+      "frozen_reproducibility/README.md": "ceb5b59d30c47bd1cdce12cb0e4403170fa81d409c61fd846cc134c6ad1451a3",
+      "frozen_reproducibility/REPRODUCIBILITY_MANIFEST.md": "d86c4365ae8892e856a0d9fbc31d823aaef680dfaaf2b51b7099add8faea2e03",
+      "frozen_reproducibility/SHA256SUMS.txt": "8f6f4dac5ade8078a20f4df6d8d16c41f9e5d5ba539af9b964717c8e7060092d",
+      "frozen_reproducibility/requirements.txt": "52fa94331648e4e477b6c34f41c34808e06d3eefc93532c5a739cd65a0f9b862",
+      "manuscript_source/source/figures/fig1_matched_information_construction.tex": "6ebde2f71a691d6e27fc1c0c6a68214fa896a44e59d4e119a7982ee536cee2ca",
+      "manuscript_source/source/figures/fig2_capacity_regime_map.tex": "4d0a38d829b78e8c75e502340e1023caa65613deea058be5c37e90b3f60425bc",
+      "manuscript_source/source/figures/fig3_nonmonotone_boundary.tex": "5f7e7c1543b0f92083fb1ab4feef9cbd296bc05b83dcb3b027f53414c167aefa",
+      "manuscript_source/source/macros.tex": "c60c2e7017625f0a0a1643912948fa81a84ac56d1e2e4c4c7daf503cb4661b40",
+      "manuscript_source/source/main.tex": "514407201d613ed353f5fcbced5d7ce23f7fac0f7d06df1a79c3503235a4a0fb",
+      "manuscript_source/source/preamble.tex": "eee344424ddcfdde6d947e6e6f8b576e5f619933a26e3a91440f63944f9a3526",
+      "manuscript_source/source/references.bib": "400810c7c569fea8841cd47455050ac58c0aa8d12c88fd216e5a6bf788065754",
+      "manuscript_source/source/sections/00_abstract.tex": "c365ca786192a910de43bf8779e4e08f7e2bf5f7c090006eccbcf206f1afc559",
+      "manuscript_source/source/sections/01_introduction.tex": "01a1609d04d6ad3bfb887a9b32da6f6a68d31af6ddba7f5d97576da57efec860",
+      "manuscript_source/source/sections/02_methods.tex": "de89627c12c7ee68cee6c4086a75fcc82ab3b78f2f302923a6a4723d67d71c54",
+      "manuscript_source/source/sections/03_results.tex": "1d78b09df80db48411458d1ef7bc71a7f6710b1b3a77aec885335cb62b703a71",
+      "manuscript_source/source/sections/04_discussion.tex": "140963c49230dfd1c1d01f86efbffcc8899b30d1622afea2c1b0fb0253f42e55",
+      "manuscript_source/source/sections/05_conclusion.tex": "697fbb58cc22ed225e6b95b54f55a72164ccf5e6566716744009bbd79ee48558",
+      "manuscript_source/source/supplementary/sections/S1_model_notation.tex": "a12585f9b40bd42750df9e2621901d742bff06043aec0893f50ee44c63f4bcfc",
+      "manuscript_source/source/supplementary/sections/S2_recourse_derivation.tex": "8ca47d83332b03b802311c2e8860cfbf50b72d77488b22978079ee58b59ee707",
+      "manuscript_source/source/supplementary/sections/S3_sensitivity_identity.tex": "3dc19cd7d2c0be9eb242d6019d022a59f5e4df843e513e7dd9cef0d1ec40ca08",
+      "manuscript_source/source/supplementary/sections/S4_monotonicity_proofs.tex": "b0b40984ca51e84cbb6cdb4490def745783f2eed6a155c33c6f34a367c564522",
+      "manuscript_source/source/supplementary/sections/S5_lattice_falsification.tex": "2fd98144d5b66336b84899bbeead951ccc20a5d4d4fd6fa13adfc41b00e06f29",
+      "manuscript_source/source/supplementary/sections/S6_exact_examples.tex": "80c12b0f2cf95d1e9d98e2ee0d920c52c63c938f1f026c6615bde182ef411b1e",
+      "manuscript_source/source/supplementary/sections/S7_reproducibility.tex": "9f09e91df2175319748a066f5c13b1504328d7383ea79b3c57b7765499e6891b",
+      "manuscript_source/source/supplementary/sections/S8_claim_evidence_trace.tex": "937cedc88e995e6c0e2f6cdbbdb97d643cbd49467397bd5c431d1778b4417d42",
+      "manuscript_source/source/supplementary/supplement.tex": "0ffca2fd38a911488767316dc0a219864d14422cf085b334478c5aa7a2c3e61f",
+      "manuscript_source/source/supplementary/tabS1_verification_summary.tex": "371484c6baa0f3785b96bbc1d3039835dab81a0f497100a00a9169b40220b1a8",
+      "manuscript_source/source/tables/tab1_structural_decision_validity.tex": "0c0fd4b6965a95f3be6b68038716aa5950adb38c7950e73fa76dc14b743c9c7d"
+    }
+  },
+  "invariance_converse": {
+    "abstract_minimal_example": {
+      "H_by_high_count": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "expected_value": "1/2",
+      "n": [
+        2,
+        2
+      ],
+      "p_high": [
+        "p",
+        "1-p"
+      ],
+      "q": [
+        "1/2",
+        "1/2"
+      ],
+      "scope": "arbitrary H tables; not claimed common-primitives recourse"
+    },
+    "bounded_search": [
+      {
+        "K": 2,
+        "first_counterexample": {
+          "labels": [
+            [
+              0,
+              [
+                0,
+                2
+              ]
+            ],
+            [
+              0,
+              [
+                1,
+                1
+              ]
+            ],
+            [
+              0,
+              [
+                2,
+                0
+              ]
+            ],
+            [
+              1,
+              [
+                0,
+                2
+              ]
+            ],
+            [
+              1,
+              [
+                1,
+                1
+              ]
+            ],
+            [
+              1,
+              [
+                2,
+                0
+              ]
+            ]
+          ],
+          "values": [
+            -1,
+            -1,
+            0,
+            -1,
+            0,
+            0
+          ]
+        },
+        "invariant_tables": 45,
+        "n": [
+          2,
+          2
+        ],
+        "non_common_affine_invariant_tables": 34,
+        "tables_tested": 729
+      },
+      {
+        "K": 2,
+        "first_counterexample": null,
+        "invariant_tables": 45,
+        "n": [
+          1,
+          1,
+          1
+        ],
+        "non_common_affine_invariant_tables": 0,
+        "tables_tested": 729
+      },
+      {
+        "K": 3,
+        "first_counterexample": null,
+        "invariant_tables": 45,
+        "n": [
+          1,
+          1
+        ],
+        "non_common_affine_invariant_tables": 0,
+        "tables_tested": 729
+      }
+    ],
+    "common_recourse_equal_volume_example": {
+      "H_by_high_count": [
+        1,
+        1,
+        2,
+        2
+      ],
+      "a": [
+        1,
+        1
+      ],
+      "capacities": [
+        1,
+        2
+      ],
+      "expected_value": "3/2",
+      "n": [
+        3,
+        3
+      ],
+      "q": [
+        "1/2",
+        "1/2"
+      ],
+      "scope": "two labelled regimes with equal n; not distinct return volumes",
+      "v": [
+        2,
+        1
+      ]
+    },
+    "dimension_checks": [
+      {
+        "H_coefficients": 6,
+        "K": 2,
+        "all_fibers_kernel_dimension": 3,
+        "common_affine_dimension": 3,
+        "n": [
+          2,
+          2
+        ],
+        "single_uniform_fiber_kernel_dimension": 4
+      },
+      {
+        "H_coefficients": 7,
+        "K": 2,
+        "all_fibers_kernel_dimension": 3,
+        "common_affine_dimension": 3,
+        "n": [
+          2,
+          3
+        ],
+        "single_uniform_fiber_kernel_dimension": 4
+      },
+      {
+        "H_coefficients": 6,
+        "K": 2,
+        "all_fibers_kernel_dimension": 3,
+        "common_affine_dimension": 3,
+        "n": [
+          1,
+          3
+        ],
+        "single_uniform_fiber_kernel_dimension": 3
+      },
+      {
+        "H_coefficients": 9,
+        "K": 2,
+        "all_fibers_kernel_dimension": 4,
+        "common_affine_dimension": 4,
+        "n": [
+          1,
+          2,
+          3
+        ],
+        "single_uniform_fiber_kernel_dimension": 4
+      },
+      {
+        "H_coefficients": 12,
+        "K": 3,
+        "all_fibers_kernel_dimension": 4,
+        "common_affine_dimension": 4,
+        "n": [
+          2,
+          2
+        ],
+        "single_uniform_fiber_kernel_dimension": 7
+      },
+      {
+        "H_coefficients": 15,
+        "K": 3,
+        "all_fibers_kernel_dimension": 5,
+        "common_affine_dimension": 5,
+        "n": [
+          1,
+          2,
+          2
+        ],
+        "single_uniform_fiber_kernel_dimension": 5
+      }
+    ],
+    "distinct_volume_abstract_example": {
+      "H_by_high_count": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          "3/2",
+          "3/2"
+        ]
+      ],
+      "expected_value": "3/5",
+      "n": [
+        2,
+        3
+      ],
+      "p_high": [
+        "p",
+        "1-p"
+      ],
+      "q": [
+        "3/5",
+        "2/5"
+      ],
+      "scope": "arbitrary H tables; common-primitives distinct-volume recourse converse remains unclassified"
+    },
+    "distinct_volume_common_recourse_search": {
+      "configurations": 8400,
+      "invariant_nonaffine_counterexamples": [],
+      "nonaffine_candidates": 7039,
+      "ranges": "K=2; 1<=n1<=5,n1<n2<=6; a={(1,1),(1,2),(1,3),(2,3)}; v={(2,1),(3,1),(3,2),(1,1)}; Ca=0..6,Cb=Ca+1..8; q=(n2,n1)/(n1+n2),p2=1-p1"
+    },
+    "failures": []
+  },
+  "regression": {
+    "aligned_cases": {
+      "A": 6318,
+      "B": 59616,
+      "straddling": 15732
+    },
+    "aligned_ranges": "full frozen domains as stated in frozen source and manifest; direct integer recourse",
+    "authority": "archive frozen outputs, read-only",
+    "cleanroom_limitation": "standalone cleanroom source absent; its checks are not claimed rerun",
+    "cleanroom_reference_only": {
+      "boundary_equalities": {
+        "cases": 1404,
+        "failures": []
+      },
+      "larger_cleanroom_grid": {
+        "A_cases": 8505,
+        "A_failures": [],
+        "B_cases": 27630,
+        "B_failures": [],
+        "S_cases": 15255,
+        "S_failures": []
+      },
+      "sensitivity_identity": {
+        "cases": 100,
+        "failures": []
+      }
+    },
+    "failures": [],
+    "frozen_nonaligned_counterexamples_rechecked": 20,
+    "locked_2x2_derivative_identity": {
+      "0": "-9/28",
+      "1": "129/98",
+      "2": "15/343",
+      "3": "-162/2401"
+    },
+    "locked_nonmonotone_polynomial": {
+      "0": "41/32",
+      "1": "-9/28",
+      "2": "129/196",
+      "3": "5/343",
+      "4": "-81/4802"
+    },
+    "recourse_cases": 80160,
+    "recourse_ranges": "exact full frozen domain: m=2..5,n=1..10,C=0..mn+1,vL=1..3,vH=vL..5,g=0..n"
+  },
+  "remanufacturing_structure": {
+    "adversarial_sign_search": {
+      "baseline": {
+        "first": {
+          "D": 1,
+          "a": [
+            1,
+            2,
+            2
+          ],
+          "ca": 1,
+          "cb": 3,
+          "ell": 3,
+          "h": [
+            0,
+            0,
+            0
+          ],
+          "k": 2,
+          "n": 1,
+          "v": [
+            3,
+            2,
+            1
+          ]
+        },
+        "sign_violations": 230,
+        "tests": 2646
+      },
+      "scarce": {
+        "first": {
+          "D": -1,
+          "a": [
+            1,
+            2,
+            2
+          ],
+          "ca": 1,
+          "cb": 3,
+          "ell": 2,
+          "h": [
+            0,
+            0,
+            2
+          ],
+          "k": 1,
+          "n": 3,
+          "v": [
+            3,
+            2,
+            1
+          ]
+        },
+        "sign_violations": 26,
+        "tests": 2499
+      }
+    },
+    "dominance_prefix_cases": 30600,
+    "equal_load_group_sign_cases": 108000,
+    "failures": [],
+    "heterogeneous_load_directional_family_example": {
+      "Delta_polynomial": {
+        "0": "23/54",
+        "1": "-1/18",
+        "2": "1/18",
+        "3": "-1/54"
+      },
+      "a": [
+        1,
+        1,
+        2
+      ],
+      "capacities": [
+        2,
+        3
+      ],
+      "derivative_polynomial": {
+        "0": "-1/18",
+        "1": "1/9",
+        "2": "-1/18"
+      },
+      "endpoint_values": {
+        "-1/3": "329/729",
+        "0": "23/54",
+        "1/3": "301/729"
+      },
+      "eta_interval": [
+        "-1/3",
+        "1/3"
+      ],
+      "n": [
+        1,
+        3
+      ],
+      "q": [
+        "1/2",
+        "1/2"
+      ],
+      "strict_derivative_bound": "Delta_prime <= -(1/2)*p_high,grade1^2 < 0 throughout this path",
+      "v": [
+        3,
+        2,
+        1
+      ]
+    },
+    "independent_subset_recourse_cases": 3640,
+    "packing_counterexamples": [
+      {
+        "D": -1,
+        "R_ell": [
+          0,
+          3
+        ],
+        "R_k": [
+          3,
+          5
+        ],
+        "a": [
+          1,
+          2,
+          3
+        ],
+        "capacities": [
+          1,
+          7
+        ],
+        "ell": 2,
+        "g_ell": [
+          0,
+          1,
+          6
+        ],
+        "g_k": [
+          1,
+          0,
+          6
+        ],
+        "h": [
+          0,
+          0,
+          6
+        ],
+        "increment_lcm_multiple": 1,
+        "k": 1,
+        "n": 7,
+        "name": "strict_chain_scarce_lcm_failure",
+        "v": [
+          3,
+          2,
+          1
+        ]
+      },
+      {
+        "D": 1,
+        "R_ell": [
+          2,
+          3
+        ],
+        "R_k": [
+          3,
+          5
+        ],
+        "a": [
+          1,
+          2,
+          3
+        ],
+        "capacities": [
+          2,
+          8
+        ],
+        "ell": 3,
+        "g_ell": [
+          0,
+          1,
+          1
+        ],
+        "g_k": [
+          1,
+          1,
+          0
+        ],
+        "h": [
+          0,
+          1,
+          0
+        ],
+        "increment_lcm_multiple": 1,
+        "k": 1,
+        "n": 2,
+        "name": "strict_chain_baseline_lcm_failure",
+        "v": [
+          3,
+          2,
+          1
+        ]
+      }
+    ],
+    "ranges": {
+      "adversarial_sign": "a in {(1,1,2),(1,2,2),(1,2,3)}, v=(3,2,1), n=1..7, Ca=0..8, Cb=Ca+lcm(a), regime-filtered; every h and k<ell",
+      "equal_load_and_prefix": "K=3; all 1<=a1<=a2<=a3<=3; all 3>=v1>=v2>=v3>=1; n=1..4; C=0..8; all count vectors; equal-load grade pairs and all capacity pairs",
+      "independent_subset": "five K3 FAMILIES (one without dominance); n=0..5; C=0..12; every grade-count vector"
+    },
+    "strict_equal_load_example": {
+      "D": 1,
+      "a": [
+        1,
+        1,
+        2
+      ],
+      "capacities": [
+        1,
+        2
+      ],
+      "ell": 2,
+      "h": [
+        1,
+        0,
+        0
+      ],
+      "k": 1,
+      "v": [
+        3,
+        2,
+        1
+      ]
+    }
+  },
+  "schema": "CORE_COUPLE_GEN1_exact_results_v1",
+  "untested": [
+    "non-multinomial conditional laws",
+    "continuous grades/volumes/capacities",
+    "composition-dependent loads, recovery values, or fixed costs",
+    "correlated item grades within a regime",
+    "global structural converse restricted to common-primitives distinct-volume S=2 recourse on a single fiber",
+    "heterogeneous-load sign theorems beyond the explicitly proved equal-load-group result",
+    "empirical prevalence, managerial validation, literature novelty"
+  ]
+}

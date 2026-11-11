@@ -1,16 +1,25 @@
-cff-version: 1.2.0
-message: "If you use these reproducibility artifacts, please cite the archived repository record."
-title: "Reproducibility artifacts for Decision Validity of Stable Return Composition in Remanufacturing Capacity Expansion: Capacity-Regime Boundaries under Volume-Conditioned Core Quality"
-type: software
-version: "1.0.0"
-authors:
-  - family-names: "Bakon"
-    given-names: "Krisztián Attila"
-    orcid: "https://orcid.org/0000-0003-1882-094X"
-    affiliation: "University of Pannonia, Nagykanizsa – University Center for Circular Economy"
-keywords:
-  - remanufacturing
-  - capacity planning
-  - reproducibility
-  - verification
-  - return quality
+{
+  "cff-version": "1.2.0",
+  "message": "Please cite this software release using its archived repository record once assigned.",
+  "type": "software",
+  "title": "Reproducibility package for When Is Pooled Return-Quality Information Sufficient for Remanufacturing Capacity Choice?",
+  "version": "2.0.0",
+  "authors": [
+    {
+      "family-names": "Bakon",
+      "given-names": "Krisztián Attila",
+      "orcid": "https://orcid.org/0000-0003-1882-094X"
+    }
+  ],
+  "license": [
+    "MIT",
+    "CC-BY-4.0"
+  ],
+  "keywords": [
+    "remanufacturing",
+    "capacity choice",
+    "exact verification",
+    "return quality",
+    "reproducibility"
+  ]
+}

@@ -1,0 +1,9 @@
+# Portability changes
+
+The computational functions are copied unchanged from the repository. Structural AST comparison confirms every non-main function is identical in each verifier. Focused diffs record the changes; the removed private default is redacted in the public diff. Original and public hashes are in REPRODUCIBILITY_MANIFEST.md.
+
+GEN1: replace the private archive default with a release-relative two-file snapshot; use the gen1 directory name; permit an explicit output in an existing external directory; default to a generated filename rather than archived expected output. The optional input checksum baseline resolves to the subset manifest. The legacy input_integrity output field is restored from an immutable source-input receipt. It describes the ORIGINAL full source container, not a new check of its omitted manuscript/housekeeping members. Fresh subset bytes are independently checked against SHA-256. This is input-container/provenance plumbing only; all scientific outputs and all computation functions are unchanged.
+
+GEN2: resolve the GEN1 archived input from gen1/expected; allow outputs in an existing external directory; default to a generated filename; adjust the release directory-name guard and introductory usage text. GEN2 intentionally reads the immutable archived GEN1 bytes because its provenance includes that file digest. verify_release.py first verifies GEN1 against those bytes semantically and then executes GEN2.
+
+The wrapper verifies every release file, runs both original bounded domains, and compares the complete parsed outputs with no scientific or numeric field exclusions. Byte equality is reported separately. It uses temporary output files outside the package. No threshold, arithmetic, grid, expected number, assertion or recourse algorithm was changed.

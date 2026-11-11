@@ -1,0 +1,24 @@
+--- development_gen2/CORE_COUPLE_GEN2_exact_falsifier_v1.py
++++ gen2/CORE_COUPLE_GEN2_exact_falsifier_v1.py
+@@ -1,6 +1,6 @@
+ """GEN2 residual-capacity falsifier, Python >=3.10, standard library only.
+ 
+-Read the analytical derivation first. Direct count-allocation enumeration supplies
++See the manuscript supplement for the analytical derivation. Direct count-allocation enumeration supplies
+ the independent recourse truth; prefix/residue formulas are predictions checked
+ against it. No GEN1 module is imported or executed. No input is written.
+ 
+@@ -505,10 +505,10 @@
+ 
+ def main():
+     parser=argparse.ArgumentParser(description=__doc__)
+-    parser.add_argument('--output',type=Path,default=ROOT/'CORE_COUPLE_GEN2_exact_results_v1.json')
+-    parser.add_argument('--gen1-results',type=Path,default=PROJECT/'development_gen1/CORE_COUPLE_GEN1_exact_results_v1.json')
++    parser.add_argument('--output',type=Path,default=ROOT/'generated_results_v1.json')
++    parser.add_argument('--gen1-results',type=Path,default=PROJECT/'gen1/expected/CORE_COUPLE_GEN1_exact_results_v1.json')
+     args=parser.parse_args()
+-    require(ROOT.name=='development_gen2' and args.output.resolve().is_relative_to(ROOT),'output outside GEN2')
++    require(ROOT.name=='gen2' and args.output.parent.is_dir(),'output parent must exist')
+     gen1_before=sha256(args.gen1_results.read_bytes()).hexdigest()
+     result={'schema':'CORE_COUPLE_GEN2_exact_results_v1','classification':'A — MATERIAL STRUCTURAL THEOREM',
+             'arithmetic':'integer/Fraction; no float, Monte Carlo, or numerical derivative',
